@@ -1,18 +1,24 @@
-## Getting Started
+## 7DaysOfCode - Java
 
-Welcome to the VS Code Java world. Here is a guideline to help you get started to write Java code in Visual Studio Code.
+Projeto desenvolvido para cumprir os desafios do 7DaysOfCode da Alura. Um projeto que tem a finalidade de consumir a API do IMDB, um site que armazena dados sobre filmes, series e atores, com uma base de dados enorme.
 
-## Folder Structure
+## Tecnologias utilizadas (projeto ainda em desenvolvimento)
 
-The workspace contains two folders by default, where:
+Aqui estao alguimas tecnologias utilizadas no desenvolvimento do projeto:
 
-- `src`: the folder to maintain sources
-- `lib`: the folder to maintain dependencies
+- Java
 
-Meanwhile, the compiled output files will be generated in the `bin` folder by default.
+### 1 dia do desafio
 
-> If you want to customize the folder structure, open `.vscode/settings.json` and update the related settings there.
+No primeiro dia do desafio, foi pedido que utilizando a linguagem Java, acessassemos a API do IMDB, para poder mostar na linha de comando os Top 250 Filmes.
 
-## Dependency Management
+#### Passos realizados
+- Para realizar o acesso, foi necessario efetuar cadastro na plataforma da [API-IMDB](https://imdb-api.com/api).
+- Criado o projeto pelo VS Code: utilizando a paleta de comandos (Ctrl + Shift + P), sem ferramentas de build inicialmente;
+- Com o projeto criado, substitui o tradicional **"Hello World" do Java**, pelo codigo responsavel para mostrar a lista de filmes;
+- Dentro do metodo `main`, foram utilizadas as classes HttpRequest, HttpClient e HttpResponse, todas do pacote `java.net.http`, além da URI, do pacote `java.net.URI`;
+- Foi preciso gerar um `client`, para poder realizar a requisicao, de forma que pudesse pegar o JSON da resposta e mostrar na linha de comando;
 
-The `JAVA PROJECTS` view allows you to manage your dependencies. More details can be found [here](https://github.com/microsoft/vscode-java-dependency#manage-dependencies).
+![Imagem da tela do codigo da aplicacao](assets/filmes-java-dia-1.png)
+
+
