@@ -14,7 +14,7 @@ import java.util.stream.Stream;
 public class App {
     
     public static void main(String[] args) throws Exception {      
-        String key = "k_61y8j4ml";
+        String key = "<suaApiKey>";
         String endApi = "https://imdb-api.com/en/API/Top250Movies/" + key;
         URI url = new URI(endApi);
 
