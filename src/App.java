@@ -3,6 +3,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
+import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
@@ -13,7 +14,7 @@ import java.util.stream.Stream;
 // dia 2 - parsear a resposta obtida e extrair o titulo e a URL da imagem de cada filme
 public class App {
     
-    public static void main(String[] args) throws Exception {      
+    public static void main(String[] args) throws Exception {
         String key = "<suaApiKey>";
         String endApi = "https://imdb-api.com/en/API/Top250Movies/" + key;
         URI url = new URI(endApi);
@@ -28,68 +29,8 @@ public class App {
         HttpResponse<String> resp = client.send(req, BodyHandlers.ofString());
         String json = resp.body();
 
-        String[] moviesArray = parse(json);
+        ListMovies catalogo = new ListMovies(json);
+        catalogo.getFilmes().forEach(System.out::println);
 
-        List<String> titles = parseTitles(moviesArray);
-        for (String title : titles){
-            System.out.println("Titulo: " + title);
-        }
-
-        List<String> urlImages = parseUrlImages(moviesArray);
-        for (String urlIm : urlImages){
-            System.out.println("URL da imagem: " + urlIm);
-        }
-
-        List<String> years = parseYears(moviesArray);
-        for (String year : years){
-            System.out.println("Ano de lançamento: " + year);
-        }
-
-        List<String> ratings = parseRating(moviesArray);
-        for (String rate : ratings){
-            System.out.println("Nota do filme: " + rate);
-        }
-
-    }
-
-    private static String[] parse(String json) {
-        Matcher matcher = Pattern.compile(".*\\[(.*)\\].*").matcher(json);
-
-        if (!matcher.matches()) {
-            throw new IllegalArgumentException("no match in " + json);
-        }
-
-        String[] moviesArray = matcher.group(1).split("\\},\\{");
-        moviesArray[0] = moviesArray[0].substring(1);
-        //System.out.println(moviesArray[0]);
-        int last = moviesArray.length - 1;
-        String lastString = moviesArray[last];
-        moviesArray[last] = moviesArray[last].substring(0, lastString.length() - 1);
-        //System.out.println(moviesArray[last]);
-        return moviesArray;
-    }
-
-    private static List<String> parseAtrib(String[] moviesArray, int pos){
-        return Stream.of(moviesArray)
-                .map(e -> e.split("\",\"")[pos])
-                .map(e -> e.split(":\"")[1])
-                .map(e -> e.replaceAll("\"", ""))
-                .collect(Collectors.toList());
-    }
-
-    private static List<String> parseTitles(String[] moviesArray){
-        return parseAtrib(moviesArray,3);
-    }
-
-    private static List<String> parseUrlImages(String[] moviesArray){
-        return parseAtrib(moviesArray,5);
-    }
-
-    private static List<String> parseYears(String[] moviesArray){
-        return parseAtrib(moviesArray,4);
-    }
-
-    private static List<String> parseRating(String[] moviesArray){
-        return parseAtrib(moviesArray,7);
     }
 }

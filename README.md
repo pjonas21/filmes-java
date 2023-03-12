@@ -36,3 +36,18 @@ No segundo dia do desafio, foi pedido que após receber o `json` com a resposta 
 ![Imagem da tela do codigo da aplicacao](assets/filmes-java-dia-2-0.png)
 ![Imagem da tela do codigo da aplicacao](assets/filmes-java-dia-2-1.png)
 ![Imagem da tela do codigo da aplicacao](assets/filmes-java-dia-2-2.png)
+
+
+### 3º dia do desafio
+
+No terceiro dia do desafio, foi pedido para fazer uma melhor modelagem do código, já com pensamento em Orientação a Objeto. E levantamento de algumas reflexões.
+
+#### Passos realizados
+- Foram criadas as classes `Movie` e `ListMovies`.
+- A primeira classe recebe os dados dos filmes (título, urlImagem, ano e nota);
+- A segunda classe cria a lista de filmes, nela foi colocado o método para parsear o json recebido da chamada da API, adicionando um método que pega cada valor de forma isolada, de forma a gerar um novo objeto `Movie`, cada vez que a função passa pelo `json`.
+- Não havia a necessidade de implementar `setters` para a classe `Movie`, pois esses dados são enviados pela API, não fazendo necessário sua manipulação para edição dessas informações.
+
+![Imagem da tela do codigo da aplicacao](assets/filmes-java-dia-3-0.png)
+![Imagem da tela do codigo da aplicacao](assets/filmes-java-dia-3-1.png)
+![Imagem da tela do codigo da aplicacao](assets/filmes-java-dia-3-2.png)
