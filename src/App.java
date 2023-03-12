@@ -3,15 +3,11 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
+
 
 // dia 1 - acessar os dados da API e mostrar na linha de comando
 // dia 2 - parsear a resposta obtida e extrair o titulo e a URL da imagem de cada filme
+// dia 3 - modelar o código de melhor forma, já pensando em Orietação a Objetos
 public class App {
     
     public static void main(String[] args) throws Exception {
