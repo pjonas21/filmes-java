@@ -23,7 +23,7 @@ No primeiro dia do desafio, foi pedido que utilizando a linguagem Java, acessass
 
 ### 2º dia do desafio
 
-No segundo dia do desafio, foi pedido que após receber o `json` com a resposta da chamada da API, devíamos parsear a resposta de forma a obter o título, a url da imagem, ano e imdb rating de cada filme.
+No segundo dia do desafio, foi pedido que após receber o `json` com a resposta da chamada da API, devíamos parsear a resposta de forma a obter o título, a url da imagem, ano e a nota de cada filme.
 
 #### Passos realizados
 - Foi criado o método `private static String[] parse(String json){}`, com a finalidade de parsear o json recebido da API, retornando um Array de todos os filmes;

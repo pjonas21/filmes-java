@@ -3,10 +3,7 @@ import java.net.http.HttpClient;
 import java.net.http.HttpRequest;
 import java.net.http.HttpResponse;
 import java.net.http.HttpResponse.BodyHandlers;
-import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -43,6 +40,16 @@ public class App {
             System.out.println("URL da imagem: " + urlIm);
         }
 
+        List<String> years = parseYears(moviesArray);
+        for (String year : years){
+            System.out.println("Ano de lançamento: " + year);
+        }
+
+        List<String> ratings = parseRating(moviesArray);
+        for (String rate : ratings){
+            System.out.println("Nota do filme: " + rate);
+        }
+
     }
 
     private static String[] parse(String json) {
@@ -76,5 +83,13 @@ public class App {
 
     private static List<String> parseUrlImages(String[] moviesArray){
         return parseAtrib(moviesArray,5);
+    }
+
+    private static List<String> parseYears(String[] moviesArray){
+        return parseAtrib(moviesArray,4);
+    }
+
+    private static List<String> parseRating(String[] moviesArray){
+        return parseAtrib(moviesArray,7);
     }
 }
