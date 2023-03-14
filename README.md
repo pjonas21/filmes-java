@@ -7,6 +7,8 @@ Projeto desenvolvido para cumprir os desafios do 7DaysOfCode da Alura. Um projet
 Aqui estão alguimas tecnologias utilizadas no desenvolvimento do projeto:
 
 - Java
+- HTML
+- [Bootstrap](https://getbootstrap.com/)
 
 ### 1º dia do desafio
 
@@ -51,3 +53,19 @@ No terceiro dia do desafio, foi pedido para fazer uma melhor modelagem do códig
 ![Imagem da tela do codigo da aplicacao](assets/filmes-java-dia-3-0.png)
 ![Imagem da tela do codigo da aplicacao](assets/filmes-java-dia-3-1.png)
 ![Imagem da tela do codigo da aplicacao](assets/filmes-java-dia-3-2.png)
+
+
+### 4º dia do desafio
+
+No quarto dia do desafio, foi pedido para gerar o `HTML` da página para exibir a lista dos TOP 250 filmes da API do IMDB, ao usuário.
+
+#### Passos realizados
+- Dentro da classe principal, foi criado uma variável do tipo `FileWriter` para gerar um arquivo HTML, dentro da pasta raiz do projeto.
+- Em seguida, utilizando o método `write`, foram criadas as linhas do arquivo HTML passando toda a estrutura da página.
+- Para estilizar a página, foi adicionado via CDN, o Bootstrap, biblioteca CSS bastante utilizada na estilização de sites e WebApps.
+- Dentro dessa estrutura, foi montando uma estrutura de repetição com `for`, de forma a percorrer cada item da lista de filmes, para gerar um card com as informações de cada um.
+
+
+![Imagem da tela do codigo da aplicacao](assets/filmes-java-dia-4-1.png)
+![Imagem da tela do codigo da aplicacao](assets/filmes-java-dia-4-0.png)
+
