@@ -69,3 +69,16 @@ No quarto dia do desafio, foi pedido para gerar o `HTML` da página para exibir 
 ![Imagem da tela do codigo da aplicacao](assets/filmes-java-dia-4-1.png)
 ![Imagem da tela do codigo da aplicacao](assets/filmes-java-dia-4-0.png)
 
+
+### 5º dia do desafio
+
+No quinto dia do desafio, foi pedido para encapsular o código de chamada da API e o código para parsear o `JSON`.
+
+#### Passos realizados
+- Foram criadas as classes `HtmlGenerator` e `ImdbApiClient`.
+- A primeira foi criada para gerar o HTML da página recebendo apenas o `JSON` já parseado pela classe `ListMovies`.
+- A segunda foi criada para encapsular a chamada da API, com os métodos já utilizados anteriormente.
+- Sendo criada a classe `ApiKeyLoader` apenas para carregar a chave da API do IMDB, que foi colocada no arquivo `api.properties`, com a finalidade de ocultá-la no código que subirá para o GitHub.
+- Os passos acima serviram para deixar o método `main` da classe `App` mais organizado e limpo.
+
+![Imagem da tela do codigo da aplicacao](assets/filmes-java-dia-5-0.png)
